@@ -27,7 +27,6 @@ The project demonstrates **RESTful API design**, database operations, and error 
 ---
 
 ## 📂 Project Structure 
-<br>
 ├── main.py # FastAPI app and CRUD routes 
 <br>
 ├── models.py # SQLAlchemy models and table creation
@@ -37,7 +36,9 @@ The project demonstrates **RESTful API design**, database operations, and error 
 └── requirements.txt # Project dependencies
 
 <br>
-📬 API Endpoints
+<br>
+
+📬 **API Endpoints**
 <br>
 
 | Method | Endpoint                 | Description            |
