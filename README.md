@@ -35,8 +35,7 @@ The project demonstrates **RESTful API design**, database operations, and error 
 <br>
 └── requirements.txt # Project dependencies
 
-<br>
-<br>
+---
 
 📬 **API Endpoints**
 <br>
