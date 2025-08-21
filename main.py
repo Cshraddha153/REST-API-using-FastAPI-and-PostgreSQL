@@ -21,7 +21,7 @@ def Person_info():
     Person_info = db.query(models.Person).all()
     return Person_info
 
-@app.get('/get_by_id/{person_id}', response_model=Person, status_code=status.HTTP_200_OK)
+@app.get('/persons/{person_id}', response_model=Person, status_code=status.HTTP_200_OK)
 def get_person_by_id(person_id: int):
     find_person = db.query(models.Person).filter(models.Person.id == person_id).first()
     
@@ -30,7 +30,7 @@ def get_person_by_id(person_id: int):
     
     return find_person
 
-@app.post('/add_person', response_model=Person, status_code=status.HTTP_201_CREATED)
+@app.post('/persons', response_model=Person, status_code=status.HTTP_201_CREATED)
 def add_person(person: Person):
     new_person = models.Person(
         id = person.id,
@@ -48,7 +48,7 @@ def add_person(person: Person):
     db.refresh(new_person)
     return new_person
     
-@app.put('/update_person/{person_id}', response_model=Person, status_code=status.HTTP_202_ACCEPTED)
+@app.put('/persons/{person_id}', response_model=Person, status_code=status.HTTP_202_ACCEPTED)
 def update_person(person_id: int, person: Person):
     find_person = db.query(models.Person).filter(models.Person.id == person_id).first()
     
@@ -65,7 +65,7 @@ def update_person(person_id: int, person: Person):
     return find_person
 
 
-@app.delete('/delete_person/{person_id}', status_code=status.HTTP_204_NO_CONTENT)
+@app.delete('/persons/{person_id}', status_code=status.HTTP_204_NO_CONTENT)
 def delete_person(person_id: int):
     find_person = db.query(models.Person).filter(models.Person.id == person_id).first()
     if find_person is None:
